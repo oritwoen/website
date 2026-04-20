@@ -1,0 +1,252 @@
+seo:
+  title: oritwoen — developer website
+  description: Blockchain, crypto security, and dev tooling. TypeScript, Rust, Vue. Open-source since 2016.
+
+title: "oritwoen"
+description: >
+  I break crypto and build the tools to do it.
+  Blockchain since 2016, Rust systems, TypeScript tooling, Vue fullstack.
+
+hero:
+  headline: "ships code. breaks things. patches them back."
+  links:
+    - label: GitHub
+      color: primary
+      size: xl
+      to: 'https://github.com/oritwoen'
+    - label: repos
+      size: xl
+      color: neutral
+      variant: soft
+      to: '/projects'
+
+terminal:
+  lines:
+    - segments:
+        - text: "$ "
+          style: prompt
+        - text: "neofetch"
+          style: cmd
+        - text: " --short"
+          style: flag
+    - segments:
+        - text: "  user:  "
+          style: dim
+        - text: "oritwoen"
+          style: cmd
+    - segments:
+        - text: "  stack: "
+          style: dim
+        - text: "TypeScript"
+          style: metric-good
+        - text: " / "
+          style: dim
+        - text: "Rust"
+          style: metric-good
+        - text: " / "
+          style: dim
+        - text: "Vue"
+          style: metric-good
+        - text: " / "
+          style: dim
+        - text: "Python"
+          style: metric-good
+    - segments:
+        - text: "  since: "
+          style: dim
+        - text: "2016"
+          style: metric-good
+        - text: " — Arch Linux, btw"
+          style: dim
+    - segments:
+        - text: " "
+          style: dim
+    - segments:
+        - text: "$ "
+          style: prompt
+        - text: "grep"
+          style: cmd
+        - text: " -ri "
+          style: flag
+        - text: "interests"
+          style: cmd
+    - segments:
+        - text: "  "
+          style: dim
+        - text: "λ "
+          style: flag
+        - text: "crypto security"
+          style: cmd
+        - text: " — ECDSA nonce attacks, lattice HNP, GPU Kangaroo"
+          style: dim
+    - segments:
+        - text: "  "
+          style: dim
+        - text: "λ "
+          style: flag
+        - text: "blockchain"
+          style: cmd
+        - text: " — BTC, ETH, SOL — 8 chains, no VC"
+          style: dim
+    - segments:
+        - text: "  "
+          style: dim
+        - text: "λ "
+          style: flag
+        - text: "frontend"
+          style: cmd
+        - text: " — Vue, Nuxt, headless CMS, e-commerce"
+          style: dim
+    - segments:
+        - text: "  "
+          style: dim
+        - text: "λ "
+          style: flag
+        - text: "rust systems"
+          style: cmd
+        - text: " — ECDLP solvers, vanity addr gen, hash reversal"
+          style: dim
+    - segments:
+        - text: "  "
+          style: dim
+        - text: "λ "
+          style: flag
+        - text: "dev tooling"
+          style: cmd
+        - text: " — search, git, skills, registries, archives"
+          style: dim
+    - segments:
+        - text: "  "
+          style: dim
+        - text: "λ "
+          style: flag
+        - text: "devops"
+          style: cmd
+        - text: " — Arch, Docker, CI/CD, CDN, systemd"
+          style: dim
+    - segments:
+        - text: " "
+          style: dim
+    - segments:
+        - text: "$ "
+          style: prompt
+        - text: "cat"
+          style: cmd
+        - text: " /etc/motd"
+          style: flag
+    - segments:
+        - text: "  \"if it compiles, ship it.\""
+          style: success
+
+logos:
+  title: built with
+  items:
+    - icon: i-simple-icons-typescript
+      name: TypeScript
+      href: https://www.typescriptlang.org/
+      color: "#3178C6"
+    - icon: i-simple-icons-rust
+      name: Rust
+      href: https://www.rust-lang.org/
+      color: "#DEA584"
+    - icon: i-simple-icons-vuedotjs
+      name: Vue.js
+      href: https://vuejs.org/
+      color: "#4FC08D"
+    - icon: i-simple-icons-nuxtdotjs
+      name: Nuxt
+      href: https://nuxt.com/
+      color: "#00DC82"
+    - icon: i-simple-icons-python
+      name: Python
+      href: https://www.python.org/
+      color: "#3776AB"
+    - icon: i-simple-icons-archlinux
+      name: Arch Linux
+      href: https://archlinux.org/
+      color: "#1793D1"
+    - icon: i-simple-icons-neovim
+      name: Neovim
+      href: https://neovim.io/
+      color: "#57A143"
+    - icon: i-simple-icons-cloudflare
+      name: Cloudflare
+      href: https://www.cloudflare.com/
+      color: "#F38020"
+    - icon: i-simple-icons-bitcoin
+      name: Bitcoin
+      href: https://bitcoin.org/
+      color: "#F7931A"
+    - icon: i-simple-icons-ethereum
+      name: Ethereum
+      href: https://ethereum.org/
+      color: "#627EEA"
+    - icon: i-simple-icons-solana
+      name: Solana
+      href: https://solana.com/
+      color: "#14F195"
+
+features:
+  headline: what I do
+  title: "chain internals → developer DX"
+  description: >
+    Crypto security research, blockchain infra, and the TypeScript/Rust tooling
+    that holds it all together.
+  items:
+    - icon: i-lucide-shield-check
+      title: Crypto Security
+      description: >
+        ECDSA nonce analysis, lattice attacks (HNP), GPU-accelerated Pollard's Kangaroo
+        for secp256k1 ECDLP, SHA/RIPEMD/Keccak hash reversal.
+    - icon: i-lucide-blocks
+      title: Blockchain
+      description: >
+        Hands-on since 2016: Ethereum Classic, Bitcoin, Solana, Nervos, Polkadot.
+        Wallets, puzzle solvers, Bitcoin.pl headless frontend.
+    - icon: i-lucide-wrench
+      title: Dev Tooling
+      description: >
+        TypeScript libraries — skilld (agent skillgen), omnichron (web archives),
+        retriv (local-first search), gixa (unified git API).
+    - icon: i-lucide-cpu
+      title: Rust Systems
+      description: >
+        Performance-critical: kangaroo (GPU ECDLP), vgen (vanity addresses),
+        vuke (vulnerable key research), vusi (ECDSA vuln analysis), shaha (hash DB).
+    - icon: i-lucide-layout
+      title: Frontend & Fullstack
+      description: >
+        Production Nuxt apps — bitcoin.pl headless CMS, component libraries,
+        GraphQL integrations, e-commerce backends.
+    - icon: i-lucide-server
+      title: DevOps
+      description: >
+        Arch Linux, Docker, systemd, CI/CD pipelines, IPX-based CDN infra.
+
+metrics:
+  headline: track record
+  title: "open-source since 2016"
+  description: >
+    Nearly a decade of shipping code across chains, languages, and problem domains.
+  items:
+    - value: "10"
+      label: "years on GitHub"
+      class: "text-primary"
+    - value: "6"
+      label: "languages shipped"
+      class: "text-info"
+
+cta:
+  title: "fork\nsomething"
+  description: >
+    Crypto security, blockchain infra, dev tooling — always open
+    for interesting problems.
+  command: gh repo clone oritwoen/boha
+  links:
+    - label: GitHub
+      color: primary
+      to: 'https://github.com/oritwoen'
+    - label: X
+      color: neutral
+      variant: soft
+      to: 'https://x.com/oritwoen'

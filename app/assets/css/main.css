@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@source "../../../content/**/*";
+
+@theme static {
+  --font-sans: 'Space Grotesk', -apple-system, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* animations */
+  --animate-shimmer: shimmer 8s ease-in-out infinite alternate;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite alternate;
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% center;
+    }
+
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0% {
+      opacity: 0.1;
+    }
+
+    100% {
+      opacity: 0.2;
+    }
+  }
+}
+
+/* dark mode — warm wood/amber vibes */
+.dark {
+  --ui-bg: #0f0d0a;
+  --ui-bg-muted: #161310;
+  --ui-bg-elevated: #1c1814;
+  --ui-bg-accented: #252019;
+  --ui-border: #1e1a15;
+}
+
+/* selection */
+::selection {
+  background-color: color-mix(in oklch, var(--ui-primary) 20%, transparent);
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ui-bg-accented);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--ui-primary) 15%, var(--ui-bg-accented));
+}
+
+/* terminal component glow */
+.terminal-glow {
+  box-shadow:
+    0 0 0 1px var(--ui-border),
+    0 0 30px -15px color-mix(in oklch, var(--ui-primary) 10%, transparent),
+    inset 0 1px 0 color-mix(in oklch, var(--ui-primary) 3%, transparent);
+}
+
+/* hero shader pulse */
+.hero-glow {
+  animation: glow-pulse 3s ease-in-out infinite alternate;
+}
