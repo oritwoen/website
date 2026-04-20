@@ -43,6 +43,28 @@ export default defineNuxtConfig({
       deployConfig: true,
       wrangler: {
         name: 'website',
+        account_id: '6ef8d3cbe19975e93d994f25228488e7',
+        preview_urls: true,
+        d1_databases: [{
+          binding: 'DB',
+          database_id: '3459751e-826a-4408-9df4-76534707f46a',
+          database_name: 'website',
+        }],
+        routes: [
+          {
+            pattern: 'oritwoen.dev',
+            custom_domain: true,
+          },
+        ],
+        placement: {
+          mode: 'smart',
+        },
+        observability: {
+          logs: {
+            enabled: true,
+            invocation_logs: true,
+          },
+        },
       },
     },
   },
