@@ -3,7 +3,7 @@ function enterMotion(delay: number = 0) {
   return {
     initial: { opacity: 0, x: -8 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.4, delay }
+    transition: { duration: 0.4, delay },
   }
 }
 </script>

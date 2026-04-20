@@ -10,21 +10,21 @@ const links = [
   { label: 'Reports', to: '/reports' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' }
+  { label: 'Contact', to: '/contact' },
 ]
 
 const items = computed(() =>
   links.map(l => ({
     ...l,
-    active: route.path === l.to || route.path.startsWith(`${l.to}/`)
-  }))
+    active: route.path === l.to || route.path.startsWith(`${l.to}/`),
+  })),
 )
 
 const variants: Record<string, VariantType | ((custom: unknown) => VariantType)> = {
   normal: {
     rotate: 0,
     y: 0,
-    opacity: 1
+    opacity: 1,
   },
   close: (custom: unknown) => {
     const c = custom as number
@@ -35,10 +35,10 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
       transition: {
         type: 'spring',
         stiffness: 260,
-        damping: 20
-      }
+        damping: 20,
+      },
     }
-  }
+  },
 }
 </script>
 

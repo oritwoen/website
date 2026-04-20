@@ -13,7 +13,7 @@ import { Shader, Pixelate, Plasma, SineWave } from 'shaders/vue'
         inputMax: 2,
         inputMin: 0,
         outputMax: 1.2,
-        outputMin: 0.1
+        outputMin: 0.1,
       }"
       :roundness="0.1"
       :scale="999"
@@ -34,7 +34,7 @@ import { Shader, Pixelate, Plasma, SineWave } from 'shaders/vue'
       :amplitude="0.1"
       :position="{
         x: 0.5,
-        y: 1
+        y: 1,
       }"
       :softness="0.8"
       :thickness="0.7"

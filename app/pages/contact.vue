@@ -5,12 +5,12 @@ useSeoMeta({
   title: 'Contact',
   description: contactDescription,
   ogTitle: 'Contact',
-  ogDescription: contactDescription
+  ogDescription: contactDescription,
 })
 
 useSchemaOrg([
   defineWebPage({ '@type': 'ContactPage' }),
-  defineBreadcrumb({ itemListElement: [{ name: 'Contact', item: '/contact' }] })
+  defineBreadcrumb({ itemListElement: [{ name: 'Contact', item: '/contact' }] }),
 ])
 
 defineOgImage('Hero', {
@@ -26,8 +26,8 @@ defineOgImage('Hero', {
     { text: 'telegram: @oritwoen', color: 'title' },
     { text: 'discord:  @oritwoen', color: 'title' },
     { prompt: true, text: 'echo "open for"', color: 'accent' },
-    { text: 'crypto security · blockchain infra · dev tooling', color: 'success' }
-  ]
+    { text: 'crypto security · blockchain infra · dev tooling', color: 'success' },
+  ],
 })
 
 const { copy, copied } = useClipboard()
@@ -37,32 +37,32 @@ const contacts = [
     label: 'email',
     value: 'hello@oritwoen.dev',
     href: 'mailto:hello@oritwoen.dev',
-    icon: 'i-lucide-mail'
+    icon: 'i-lucide-mail',
   },
   {
     label: 'github',
     value: 'oritwoen',
     href: 'https://github.com/oritwoen',
-    icon: 'i-simple-icons-github'
+    icon: 'i-simple-icons-github',
   },
   {
     label: 'x',
     value: '@oritwoen',
     href: 'https://x.com/oritwoen',
-    icon: 'i-simple-icons-x'
+    icon: 'i-simple-icons-x',
   },
   {
     label: 'telegram',
     value: '@oritwoen',
     href: 'https://t.me/oritwoen',
-    icon: 'i-simple-icons-telegram'
+    icon: 'i-simple-icons-telegram',
   },
   {
     label: 'discord',
     value: '@oritwoen',
     href: 'https://discord.com/users/oritwoen',
-    icon: 'i-simple-icons-discord'
-  }
+    icon: 'i-simple-icons-discord',
+  },
 ]
 </script>
 
@@ -71,41 +71,44 @@ const contacts = [
     <div class="max-w-2xl mx-auto px-4">
       <Motion v-bind="enterMotion(0.1)">
         <TerminalWindow cwd="~/.contact">
-            <div class="mb-4">
-              <span class="text-neutral">$ </span>
-              <span class="text-highlighted">cat</span>
-              <span class="text-primary"> ~/.contact</span>
-            </div>
+          <div class="mb-4">
+            <span class="text-neutral">$ </span>
+            <span class="text-highlighted">cat</span>
+            <span class="text-primary"> ~/.contact</span>
+          </div>
 
-            <div
-              v-for="(item, index) in contacts"
-              :key="item.label"
-              class="mb-1"
-            >
-              <Motion v-bind="enterMotion(0.3 + index * 0.15)">
-                <div class="flex items-center gap-3 group">
-                  <span class="text-neutral w-16 shrink-0">{{ item.label }}</span>
-                  <span class="text-neutral">→</span>
-                  <a
-                    :href="item.href"
-                    target="_blank"
-                    class="text-primary hover:text-primary-300 transition-colors duration-200 flex items-center gap-2"
-                  >
-                    <UIcon :name="item.icon" class="size-4" />
-                    {{ item.value }}
-                  </a>
-                </div>
-              </Motion>
-            </div>
-
-            <Motion v-bind="enterMotion(0.8)">
-              <div class="mt-6 pt-4 border-t border-default/40">
-                <span class="text-neutral">$ </span>
-                <span class="text-highlighted">echo</span>
-                <span class="text-muted"> "always open for interesting problems"</span>
+          <div
+            v-for="(item, index) in contacts"
+            :key="item.label"
+            class="mb-1"
+          >
+            <Motion v-bind="enterMotion(0.3 + index * 0.15)">
+              <div class="flex items-center gap-3 group">
+                <span class="text-neutral w-16 shrink-0">{{ item.label }}</span>
+                <span class="text-neutral">→</span>
+                <a
+                  :href="item.href"
+                  target="_blank"
+                  class="text-primary hover:text-primary-300 transition-colors duration-200 flex items-center gap-2"
+                >
+                  <UIcon
+                    :name="item.icon"
+                    class="size-4"
+                  />
+                  {{ item.value }}
+                </a>
               </div>
             </Motion>
-          </TerminalWindow>
+          </div>
+
+          <Motion v-bind="enterMotion(0.8)">
+            <div class="mt-6 pt-4 border-t border-default/40">
+              <span class="text-neutral">$ </span>
+              <span class="text-highlighted">echo</span>
+              <span class="text-muted"> "always open for interesting problems"</span>
+            </div>
+          </Motion>
+        </TerminalWindow>
       </Motion>
     </div>
   </div>

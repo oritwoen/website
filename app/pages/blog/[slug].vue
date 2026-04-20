@@ -2,7 +2,7 @@
 const route = useRoute()
 
 const { data: post } = await useAsyncData(route.path, () =>
-  queryCollection('posts').path(route.path).first()
+  queryCollection('posts').path(route.path).first(),
 )
 
 if (!post.value) {
@@ -10,7 +10,7 @@ if (!post.value) {
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryCollectionItemSurroundings('posts', route.path, { fields: ['description'] })
+  queryCollectionItemSurroundings('posts', route.path, { fields: ['description'] }),
 )
 
 const title = post.value.seo?.title || post.value.title
@@ -31,7 +31,7 @@ useSeoMeta({
   articleAuthor: [authorName],
   articleTag: post.value.badge?.label ? [post.value.badge.label] : undefined,
   twitterTitle: title,
-  twitterDescription: description
+  twitterDescription: description,
 })
 
 useSchemaOrg([
@@ -40,14 +40,14 @@ useSchemaOrg([
     description,
     datePublished: publishedDate,
     author: [{ '@id': 'https://oritwoen.dev#person' }],
-    keywords: post.value.badge?.label ? [post.value.badge.label] : undefined
+    keywords: post.value.badge?.label ? [post.value.badge.label] : undefined,
   }),
   defineBreadcrumb({
     itemListElement: [
       { name: 'Blog', item: '/blog' },
-      { name: title ?? 'Post' }
-    ]
-  })
+      { name: title ?? 'Post' },
+    ],
+  }),
 ])
 
 defineOgImage('Hero', {
@@ -62,17 +62,20 @@ defineOgImage('Hero', {
     { text: `tag:   ${post.value.badge?.label ?? 'blog'}` },
     { text: `by:    ${post.value.authors?.[0]?.name ?? 'oritwoen'}` },
     { prompt: true, text: 'wc -w', color: 'accent' },
-    { text: 'markdown post', color: 'success' }
-  ]
+    { text: 'markdown post', color: 'success' },
+  ],
 })
 
 const badges = computed(() =>
-  post.value?.badge?.label ? [{ label: post.value.badge.label, tone: 'primary' as const }] : []
+  post.value?.badge?.label ? [{ label: post.value.badge.label, tone: 'primary' as const }] : [],
 )
 </script>
 
 <template>
-  <div v-if="post" class="py-12 sm:py-16">
+  <div
+    v-if="post"
+    class="py-12 sm:py-16"
+  >
     <div class="max-w-3xl mx-auto px-4">
       <EntryHeader
         back-to="/blog"

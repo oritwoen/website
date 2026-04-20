@@ -11,7 +11,7 @@ const message = computed(() => is404.value ? 'route not found' : (props.error?.m
 
 useSeoMeta({
   title: `${code.value} — ${message.value}`,
-  robots: 'noindex'
+  robots: 'noindex',
 })
 
 function handleHome() {
@@ -22,7 +22,10 @@ function handleHome() {
 <template>
   <div class="min-h-screen flex items-center justify-center px-4 py-16">
     <div class="max-w-xl w-full">
-      <TerminalWindow cwd="~/error" :deleted="1">
+      <TerminalWindow
+        cwd="~/error"
+        :deleted="1"
+      >
         <div class="space-y-2">
           <div>
             <span class="text-neutral">$ </span>

@@ -26,7 +26,10 @@ defineProps<{
   >
     <div class="flex items-center justify-between mb-2">
       <div class="flex items-center gap-2">
-        <UIcon :name="project.icon" class="size-4 text-primary shrink-0" />
+        <UIcon
+          :name="project.icon"
+          class="size-4 text-primary shrink-0"
+        />
         <span class="text-highlighted group-hover:text-primary transition-colors duration-200 text-sm">
           {{ project.name }}
         </span>
@@ -52,7 +55,10 @@ defineProps<{
       >
         {{ project.language }}
       </span>
-      <template v-for="tag in project.tags.slice(0, 2)" :key="tag">
+      <template
+        v-for="tag in project.tags.slice(0, 2)"
+        :key="tag"
+      >
         <span class="text-[11px] text-dimmed bg-accented/50 px-1.5 py-0.5 rounded">
           {{ tag }}
         </span>

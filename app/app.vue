@@ -4,13 +4,13 @@ useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'theme-color', content: '#0f0d0a' },
-    { name: 'color-scheme', content: 'dark' }
+    { name: 'color-scheme', content: 'dark' },
   ],
   link: [
     { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     { rel: 'alternate icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
-  ]
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+  ],
 })
 
 useSeoMeta({
@@ -20,14 +20,14 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterSite: '@oritwoen',
   twitterCreator: '@oritwoen',
-  author: 'oritwoen'
+  author: 'oritwoen',
 })
 
 useSchemaOrg([
   defineWebSite({
     name: 'oritwoen',
     description: 'Blockchain, crypto security, and dev tooling. TypeScript, Rust, Vue. Open-source since 2016.',
-    inLanguage: 'en'
+    inLanguage: 'en',
   }),
   definePerson({
     '@id': 'https://oritwoen.dev#person',
@@ -45,13 +45,13 @@ useSchemaOrg([
       'Nuxt',
       'Security Research',
       'ECDSA',
-      'secp256k1'
+      'secp256k1',
     ],
     'sameAs': [
       'https://github.com/oritwoen',
-      'https://x.com/oritwoen'
-    ]
-  })
+      'https://x.com/oritwoen',
+    ],
+  }),
 ])
 </script>
 

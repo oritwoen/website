@@ -7,12 +7,12 @@ useSeoMeta({
   title: 'About',
   description: aboutDescription,
   ogTitle: 'About',
-  ogDescription: aboutDescription
+  ogDescription: aboutDescription,
 })
 
 useSchemaOrg([
   defineWebPage({ '@type': 'AboutPage' }),
-  defineBreadcrumb({ itemListElement: [{ name: 'About', item: '/about' }] })
+  defineBreadcrumb({ itemListElement: [{ name: 'About', item: '/about' }] }),
 ])
 
 defineOgImage('Hero', {
@@ -27,8 +27,8 @@ defineOgImage('Hero', {
     { text: 'TypeScript / Rust / Vue / Python', color: 'title' },
     { text: 'Arch Linux / Docker / PostgreSQL' },
     { prompt: true, text: 'echo "domain"', color: 'accent' },
-    { text: 'cryptography, blockchain, ECDLP', color: 'success' }
-  ]
+    { text: 'cryptography, blockchain, ECDLP', color: 'success' },
+  ],
 })
 </script>
 

@@ -7,12 +7,12 @@ useSeoMeta({
   title: 'Projects',
   description: projectsDescription,
   ogTitle: 'Projects',
-  ogDescription: projectsDescription
+  ogDescription: projectsDescription,
 })
 
 useSchemaOrg([
   defineWebPage({ '@type': 'CollectionPage' }),
-  defineBreadcrumb({ itemListElement: [{ name: 'Projects', item: '/projects' }] })
+  defineBreadcrumb({ itemListElement: [{ name: 'Projects', item: '/projects' }] }),
 ])
 
 defineOgImage('Hero', {
@@ -27,14 +27,14 @@ defineOgImage('Hero', {
     { text: 'vuke      — weak BTC key recovery', color: 'title' },
     { text: 'vgen      — vanity addr, GPU', color: 'title' },
     { prompt: true, text: 'git remote -v', color: 'accent' },
-    { text: 'github.com/oritwoen', color: 'success' }
-  ]
+    { text: 'github.com/oritwoen', color: 'success' },
+  ],
 })
 
 const langColors: Record<string, string> = {
   rust: 'text-orange-400',
   typescript: 'text-blue-400',
-  python: 'text-green-400'
+  python: 'text-green-400',
 }
 
 const ownedProjects = computed(() => projects.value?.items?.filter((p: any) => p.role === 'owner') ?? [])
@@ -57,7 +57,7 @@ const stats = computed(() => {
     ownedStars,
     languages: Object.keys(langs).length,
     topLang: topLang ? { name: topLang[0], count: topLang[1] } : null,
-    topRepo: topRepo ? { name: topRepo.name, stars: topRepo.stars } : null
+    topRepo: topRepo ? { name: topRepo.name, stars: topRepo.stars } : null,
   }
 })
 </script>
@@ -66,7 +66,11 @@ const stats = computed(() => {
   <div class="py-12 sm:py-32">
     <div class="max-w-4xl mx-auto px-4">
       <Motion v-bind="enterMotion(0.1)">
-        <TerminalWindow cwd="~/projects" :added="8" :modified="5">
+        <TerminalWindow
+          cwd="~/projects"
+          :added="8"
+          :modified="5"
+        >
           <div v-if="projects && stats">
             <!-- Stats header -->
             <div class="mb-6">
@@ -78,22 +82,34 @@ const stats = computed(() => {
 
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
                 <Motion v-bind="staggerMotion(0)">
-                  <StatCard label="public repos" color="primary">
+                  <StatCard
+                    label="public repos"
+                    color="primary"
+                  >
                     {{ projects?.github?.publicRepos ?? '—' }}
                   </StatCard>
                 </Motion>
                 <Motion v-bind="staggerMotion(1)">
-                  <StatCard label="mine / contrib" color="muted">
+                  <StatCard
+                    label="mine / contrib"
+                    color="muted"
+                  >
                     {{ stats.owned }}<span class="text-dimmed text-base">/{{ stats.contributed }}</span>
                   </StatCard>
                 </Motion>
                 <Motion v-bind="staggerMotion(2)">
-                  <StatCard label="★ own" color="info">
+                  <StatCard
+                    label="★ own"
+                    color="info"
+                  >
                     {{ stats.ownedStars }}
                   </StatCard>
                 </Motion>
                 <Motion v-bind="staggerMotion(3)">
-                  <StatCard label="languages" color="highlighted">
+                  <StatCard
+                    label="languages"
+                    color="highlighted"
+                  >
                     {{ stats.languages }}
                   </StatCard>
                 </Motion>
@@ -129,7 +145,10 @@ const stats = computed(() => {
                 :key="project.slug"
                 v-bind="staggerMotion(index)"
               >
-                <RepoCard :project="project" :lang-colors="langColors" />
+                <RepoCard
+                  :project="project"
+                  :lang-colors="langColors"
+                />
               </Motion>
             </div>
 
@@ -147,7 +166,10 @@ const stats = computed(() => {
                 :key="project.slug"
                 v-bind="staggerMotion(index)"
               >
-                <RepoCard :project="project" :lang-colors="langColors" />
+                <RepoCard
+                  :project="project"
+                  :lang-colors="langColors"
+                />
               </Motion>
             </div>
 
@@ -157,7 +179,7 @@ const stats = computed(() => {
                 <span class="text-neutral">$ </span>
                 <span class="text-highlighted">echo</span>
                 <span class="text-muted"> "full source on"</span>
-                <span class="text-neutral"> </span>
+                <span class="text-neutral" />
                 <a
                   href="https://github.com/oritwoen"
                   target="_blank"

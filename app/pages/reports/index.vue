@@ -6,12 +6,12 @@ useSeoMeta({
   description: reportsDescription,
   ogTitle: 'Reports',
   ogDescription: reportsDescription,
-  robots: 'noindex'
+  robots: 'noindex',
 })
 
 useSchemaOrg([
   defineWebPage({ '@type': 'AboutPage' }),
-  defineBreadcrumb({ itemListElement: [{ name: 'Reports', item: '/reports' }] })
+  defineBreadcrumb({ itemListElement: [{ name: 'Reports', item: '/reports' }] }),
 ])
 
 defineOgImage('Hero', {
@@ -24,8 +24,8 @@ defineOgImage('Hero', {
     { text: 'status: sealed', color: 'title' },
     { text: 'count: 0x██ · era: ████–████' },
     { prompt: true, text: 'access --list', color: 'accent' },
-    { text: 'request only', color: 'success' }
-  ]
+    { text: 'request only', color: 'success' },
+  ],
 })
 
 // Stable hacker-glitch placeholders — no real numbers leaked
@@ -33,7 +33,7 @@ const stats = [
   { label: 'reports', value: '0x██', color: 'primary' as const },
   { label: 'programs', value: '▓▓', color: 'info' as const },
   { label: 'era', value: '████–████', color: 'highlighted' as const },
-  { label: 'platforms', value: '▒▓', color: 'muted' as const }
+  { label: 'platforms', value: '▒▓', color: 'muted' as const },
 ]
 
 const categories = [
@@ -43,7 +43,7 @@ const categories = [
   { label: 'smart contract', bar: 3, hash: 'E1' },
   { label: 'open redirect', bar: 3, hash: '4B' },
   { label: 'rate-limit / automation', bar: 3, hash: 'D5' },
-  { label: 'other web', bar: 8, hash: '9F' }
+  { label: 'other web', bar: 8, hash: '9F' },
 ]
 
 function barSegments(n: number, total = 20) {
@@ -57,7 +57,7 @@ const sealed = [
   { year: '████', platform: '████████', width: 'w-4/5' },
   { year: '████', platform: '████████', width: 'w-1/2' },
   { year: '████', platform: '████████', width: 'w-3/5' },
-  { year: '████', platform: '████████', width: 'w-2/3' }
+  { year: '████', platform: '████████', width: 'w-2/3' },
 ]
 </script>
 
@@ -65,7 +65,10 @@ const sealed = [
   <UContainer class="py-12 sm:py-32">
     <div class="max-w-4xl mx-auto">
       <Motion v-bind="enterMotion(0.1)">
-        <TerminalWindow cwd="~/reports" :modified="1">
+        <TerminalWindow
+          cwd="~/reports"
+          :modified="1"
+        >
           <!-- Classified banner -->
           <div class="mb-6 flex items-center gap-3 flex-wrap">
             <span class="text-neutral">$ </span>
@@ -98,7 +101,10 @@ const sealed = [
                 :key="s.label"
                 v-bind="staggerMotion(i)"
               >
-                <StatCard :label="s.label" :color="s.color">
+                <StatCard
+                  :label="s.label"
+                  :color="s.color"
+                >
                   <span class="font-mono">{{ s.value }}</span>
                 </StatCard>
               </Motion>

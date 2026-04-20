@@ -5,12 +5,12 @@ useSeoMeta({
   title: 'What',
   description: whatDescription,
   ogTitle: 'What',
-  ogDescription: whatDescription
+  ogDescription: whatDescription,
 })
 
 useSchemaOrg([
   defineWebPage({ '@type': 'AboutPage' }),
-  defineBreadcrumb({ itemListElement: [{ name: 'What', item: '/what' }] })
+  defineBreadcrumb({ itemListElement: [{ name: 'What', item: '/what' }] }),
 ])
 
 defineOgImage('Hero', {
@@ -23,8 +23,8 @@ defineOgImage('Hero', {
     { text: 'crypto-security   : ECDSA, lattice HNP', color: 'title' },
     { text: 'gpu-compute       : Rust + wgpu, ECDLP', color: 'title' },
     { text: 'full-stack-web    : Nuxt 4, Cloudflare', color: 'title' },
-    { text: 'security-audits   : bug bounty, contracts', color: 'title' }
-  ]
+    { text: 'security-audits   : bug bounty, contracts', color: 'title' },
+  ],
 })
 
 interface Service {
@@ -46,9 +46,9 @@ const services: Service[] = [
     tags: ['Rust', 'ECDSA', 'ECDLP'],
     examples: [
       { name: 'kangaroo', href: 'https://github.com/oritwoen/kangaroo', kind: 'own' },
-      { name: 'vusi', href: 'https://github.com/oritwoen/vusi', kind: 'own' }
+      { name: 'vusi', href: 'https://github.com/oritwoen/vusi', kind: 'own' },
     ],
-    accent: 'primary'
+    accent: 'primary',
   },
   {
     id: 'gpu-compute',
@@ -58,9 +58,9 @@ const services: Service[] = [
     tags: ['Rust', 'wgpu', 'shaders'],
     examples: [
       { name: 'vgen', href: 'https://github.com/oritwoen/vgen', kind: 'own' },
-      { name: 'shaha', href: 'https://github.com/oritwoen/shaha', kind: 'own' }
+      { name: 'shaha', href: 'https://github.com/oritwoen/shaha', kind: 'own' },
     ],
-    accent: 'info'
+    accent: 'info',
   },
   {
     id: 'full-stack-web',
@@ -69,9 +69,9 @@ const services: Service[] = [
     description: 'Nuxt 4 on Cloudflare Workers and D1. Same stack as this site. Headless CMS plumbing, e-commerce, GraphQL, component libs.',
     tags: ['Nuxt', 'Vue', 'Cloudflare'],
     examples: [
-      { name: 'bitcoin.pl', href: 'https://bitcoin.pl', kind: 'client' }
+      { name: 'bitcoin.pl', href: 'https://bitcoin.pl', kind: 'client' },
     ],
-    accent: 'success'
+    accent: 'success',
   },
   {
     id: 'dev-tooling',
@@ -81,9 +81,9 @@ const services: Service[] = [
     tags: ['Rust', 'TypeScript', 'CLI'],
     examples: [
       { name: 'omnichron', href: 'https://github.com/oritwoen/omnichron', kind: 'own' },
-      { name: 'gixa', href: 'https://github.com/oritwoen/gixa', kind: 'own' }
+      { name: 'gixa', href: 'https://github.com/oritwoen/gixa', kind: 'own' },
     ],
-    accent: 'primary'
+    accent: 'primary',
   },
   {
     id: 'security-audits',
@@ -92,9 +92,9 @@ const services: Service[] = [
     description: 'Web pentests. Smart contract audits. OAuth flow review. 23 reports out across Immunefi, HackerOne, direct programs.',
     tags: ['security', 'bug-bounty', 'contracts'],
     examples: [
-      { name: 'reports', href: '/reports', kind: 'own' }
+      { name: 'reports', href: '/reports', kind: 'own' },
     ],
-    accent: 'warning'
+    accent: 'warning',
   },
   {
     id: 'ai-agents',
@@ -103,23 +103,23 @@ const services: Service[] = [
     description: 'Plumbing around Claude and other LLMs. Skill systems, memory, MCP servers, local retrieval, workflow orchestration. Boring until it works.',
     tags: ['AI', 'Claude', 'MCP'],
     examples: [
-      { name: 'skilld', href: 'https://github.com/skilld-dev/skilld', kind: 'contrib' }
+      { name: 'skilld', href: 'https://github.com/skilld-dev/skilld', kind: 'contrib' },
     ],
-    accent: 'info'
-  }
+    accent: 'info',
+  },
 ]
 
 const accentColor = {
   primary: 'text-primary',
   info: 'text-info',
   success: 'text-success',
-  warning: 'text-warning'
+  warning: 'text-warning',
 }
 
 const kindMeta: Record<'own' | 'client' | 'contrib', { glyph: string, color: string, label: string }> = {
   own: { glyph: '●', color: 'text-primary', label: 'mine' },
   client: { glyph: '◆', color: 'text-warning', label: 'client work' },
-  contrib: { glyph: '○', color: 'text-info', label: 'contributor' }
+  contrib: { glyph: '○', color: 'text-info', label: 'contributor' },
 }
 
 interface Mode {
@@ -134,20 +134,20 @@ const modes: Mode[] = [
     icon: 'i-lucide-briefcase',
     label: 'commission',
     description: 'Paid gig. Scope on paper, timeline you can plan against, rates agreed first.',
-    color: 'text-primary'
+    color: 'text-primary',
   },
   {
     icon: 'i-lucide-sparkles',
     label: 'whim',
     description: 'Weird problem, no budget? Sometimes just build it if idea sticks.',
-    color: 'text-info'
+    color: 'text-info',
   },
   {
     icon: 'i-lucide-handshake',
     label: 'collaboration',
     description: 'Long haul. OSS, startup, research, whatever we build together over months. Equity or revenue share.',
-    color: 'text-success'
-  }
+    color: 'text-success',
+  },
 ]
 </script>
 
@@ -156,7 +156,10 @@ const modes: Mode[] = [
     <div class="max-w-4xl mx-auto space-y-8">
       <!-- Services terminal -->
       <Motion v-bind="enterMotion(0.1)">
-        <TerminalWindow cwd="~/.services" :modified="6">
+        <TerminalWindow
+          cwd="~/.services"
+          :modified="6"
+        >
           <div class="mb-4">
             <span class="text-neutral">$ </span>
             <span class="text-highlighted">cat</span>
@@ -176,8 +179,14 @@ const modes: Mode[] = [
           </div>
 
           <div class="mb-3 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-dimmed">
-            <span v-for="(meta, key) in kindMeta" :key="key">
-              <span :class="meta.color" class="mr-1">{{ meta.glyph }}</span>{{ meta.label }}
+            <span
+              v-for="(meta, key) in kindMeta"
+              :key="key"
+            >
+              <span
+                :class="meta.color"
+                class="mr-1"
+              >{{ meta.glyph }}</span>{{ meta.label }}
             </span>
           </div>
 
@@ -221,7 +230,10 @@ const modes: Mode[] = [
                     v-for="(ex, ei) in service.examples"
                     :key="ex.name"
                   >
-                    <span v-if="ei > 0" class="text-neutral">·</span>
+                    <span
+                      v-if="ei > 0"
+                      class="text-neutral"
+                    >·</span>
                     <a
                       :href="ex.href"
                       :target="ex.href.startsWith('http') ? '_blank' : undefined"
@@ -229,7 +241,10 @@ const modes: Mode[] = [
                       :title="kindMeta[ex.kind].label"
                       class="hover:text-primary transition-colors underline underline-offset-4 decoration-default/50"
                     >
-                      <span :class="kindMeta[ex.kind].color" class="mr-1">{{ kindMeta[ex.kind].glyph }}</span>{{ ex.name }}
+                      <span
+                        :class="kindMeta[ex.kind].color"
+                        class="mr-1"
+                      >{{ kindMeta[ex.kind].glyph }}</span>{{ ex.name }}
                     </a>
                   </template>
                 </div>
@@ -241,7 +256,10 @@ const modes: Mode[] = [
 
       <!-- Modes terminal -->
       <Motion v-bind="enterMotion(0.2)">
-        <TerminalWindow cwd="~/.work" :added="3">
+        <TerminalWindow
+          cwd="~/.work"
+          :added="3"
+        >
           <div class="mb-4">
             <span class="text-neutral">$ </span>
             <span class="text-highlighted">echo</span>
@@ -256,8 +274,15 @@ const modes: Mode[] = [
             >
               <div class="rounded-lg border border-default/60 bg-default/40 p-4 h-full">
                 <div class="flex items-center gap-2 mb-2">
-                  <UIcon :name="mode.icon" class="size-4 shrink-0" :class="mode.color" />
-                  <span class="uppercase tracking-[0.1em] text-[11px]" :class="mode.color">
+                  <UIcon
+                    :name="mode.icon"
+                    class="size-4 shrink-0"
+                    :class="mode.color"
+                  />
+                  <span
+                    class="uppercase tracking-[0.1em] text-[11px]"
+                    :class="mode.color"
+                  >
                     {{ mode.label }}
                   </span>
                 </div>

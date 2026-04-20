@@ -42,7 +42,7 @@ export default defineEventHandler(async () => {
 
   const userPromise = $fetch<{ public_repos: number, followers: number }>(
     'https://api.github.com/users/oritwoen',
-    { headers: authHeaders }
+    { headers: authHeaders },
   ).catch(() => null)
 
   const results = await Promise.all(
@@ -83,7 +83,7 @@ export default defineEventHandler(async () => {
           role: meta.role,
         }
       }
-    })
+    }),
   )
 
   // Sort: owners first, then by stars

@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<{
   description: 'I break crypto and build the tools to do it. Blockchain since 2016, Rust systems, TypeScript tooling, Vue fullstack.',
   path: '~/.about',
   tag: 'ships code. breaks things. patches them back.',
-  terminal: () => []
+  terminal: () => [],
 })
 
 const defaultTerminal: TerminalLine[] = [
@@ -25,7 +25,7 @@ const defaultTerminal: TerminalLine[] = [
   { text: 'stack: TypeScript / Rust / Vue', color: 'title' },
   { text: 'since: 2016 — Arch Linux, btw' },
   { prompt: true, text: 'cat /etc/motd', color: 'accent' },
-  { text: '"if it compiles, ship it."', color: 'success' }
+  { text: '"if it compiles, ship it."', color: 'success' },
 ]
 
 const lines = computed<TerminalLine[]>(() => props.terminal.length > 0 ? props.terminal : defaultTerminal)
@@ -194,7 +194,10 @@ function lineColor(line: TerminalLine) {
           :key="i"
           :style="`display: flex; gap: 10px; ${line.prompt && i > 0 ? 'margin-top: 10px;' : ''}`"
         >
-          <span v-if="line.prompt" style="color: #52525b;">$</span>
+          <span
+            v-if="line.prompt"
+            style="color: #52525b;"
+          >$</span>
           <span :style="`color: ${lineColor(line)};`">
             {{ line.text }}
           </span>

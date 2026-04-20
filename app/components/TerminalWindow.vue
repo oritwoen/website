@@ -18,7 +18,7 @@ withDefaults(defineProps<{
   runtime?: Runtime
   bodyClass?: string
 }>(), {
-  bodyClass: 'p-3 sm:p-6 font-mono text-[12px] sm:text-[13px] leading-[1.7] sm:leading-[1.8]'
+  bodyClass: 'p-3 sm:p-6 font-mono text-[12px] sm:text-[13px] leading-[1.7] sm:leading-[1.8]',
 })
 </script>
 

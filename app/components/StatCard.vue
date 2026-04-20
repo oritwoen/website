@@ -3,14 +3,14 @@ const props = withDefaults(defineProps<{
   label: string
   color?: 'primary' | 'info' | 'highlighted' | 'muted'
 }>(), {
-  color: 'primary'
+  color: 'primary',
 })
 
 const colorClass = computed(() => ({
   primary: 'text-primary',
   info: 'text-info',
   highlighted: 'text-highlighted',
-  muted: 'text-muted'
+  muted: 'text-muted',
 }[props.color]))
 </script>
 

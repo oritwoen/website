@@ -126,7 +126,10 @@ const heroTitle = computed(() => {
                 class="text-muted hover:text-[var(--brand)] transition-colors duration-200"
                 :style="{ '--brand': logo.color }"
               >
-                <UIcon :name="logo.icon" class="size-6" />
+                <UIcon
+                  :name="logo.icon"
+                  class="size-6"
+                />
               </NuxtLink>
             </div>
           </Motion>
