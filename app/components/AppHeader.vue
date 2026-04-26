@@ -83,6 +83,15 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         target="_blank"
         aria-label="Bluesky"
       />
+      <UButton
+        icon="i-simple-icons-farcaster"
+        color="neutral"
+        variant="ghost"
+        class="hidden lg:flex"
+        to="https://farcaster.xyz/oritwoen"
+        target="_blank"
+        aria-label="Farcaster"
+      />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
@@ -172,6 +181,15 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           variant="soft"
           block
           to="https://bsky.app/profile/oritwoen.dev"
+          target="_blank"
+        />
+        <UButton
+          icon="i-simple-icons-farcaster"
+          label="Farcaster"
+          color="neutral"
+          variant="soft"
+          block
+          to="https://farcaster.xyz/oritwoen"
           target="_blank"
         />
       </div>
