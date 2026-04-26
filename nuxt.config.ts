@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     name: 'oritwoen',
     description: 'Blockchain, crypto security, and dev tooling. TypeScript, Rust, Vue. Open source since 2016.',
     defaultLocale: 'en',
-    titleSeparator: '—',
+    titleSeparator: 'λ',
     identity: {
       type: 'Person',
     },

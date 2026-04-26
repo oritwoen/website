@@ -22,7 +22,7 @@ defineOgImage('Hero', {
   terminal: [
     { prompt: true, text: 'stat ~/reports', color: 'accent' },
     { text: 'status: sealed', color: 'title' },
-    { text: 'count: 0x██ · era: ████–████' },
+    { text: 'count: 0x██ · era: ████λ████' },
     { prompt: true, text: 'access --list', color: 'accent' },
     { text: 'request only', color: 'success' },
   ],
@@ -32,7 +32,7 @@ defineOgImage('Hero', {
 const stats = [
   { label: 'reports', value: '0x██', color: 'primary' as const },
   { label: 'programs', value: '▓▓', color: 'info' as const },
-  { label: 'era', value: '████–████', color: 'highlighted' as const },
+  { label: 'era', value: '████λ████', color: 'highlighted' as const },
   { label: 'platforms', value: '▒▓', color: 'muted' as const },
 ]
 
