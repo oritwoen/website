@@ -50,6 +50,7 @@ useSchemaOrg([
     'sameAs': [
       'https://github.com/oritwoen',
       'https://x.com/oritwoen',
+      'https://bsky.app/profile/oritwoen.dev',
     ],
   }),
 ])

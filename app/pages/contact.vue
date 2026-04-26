@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const contactDescription = 'Email, GitHub, X, Telegram, Discord. Open for work on crypto security, blockchain infra, and dev tooling.'
+const contactDescription = 'Email, GitHub, X, Bluesky, Telegram, Discord. Open for work on crypto security, blockchain infra, and dev tooling.'
 
 useSeoMeta({
   title: 'Contact',
@@ -15,7 +15,7 @@ useSchemaOrg([
 
 defineOgImage('Hero', {
   title: 'contact',
-  description: 'Email, GitHub, X, Telegram, Discord. Open for interesting problems.',
+  description: 'Email, GitHub, X, Bluesky, Telegram, Discord. Open for interesting problems.',
   path: '~/.contact',
   tag: 'drop a line.',
   terminal: [
@@ -23,14 +23,13 @@ defineOgImage('Hero', {
     { text: 'email:    hello@oritwoen.dev', color: 'title' },
     { text: 'github:   @oritwoen', color: 'title' },
     { text: 'x:        @oritwoen', color: 'title' },
+    { text: 'bluesky:  @oritwoen.dev', color: 'title' },
     { text: 'telegram: @oritwoen', color: 'title' },
     { text: 'discord:  @oritwoen', color: 'title' },
     { prompt: true, text: 'echo "open for"', color: 'accent' },
     { text: 'crypto security · blockchain infra · dev tooling', color: 'success' },
   ],
 })
-
-const { copy, copied } = useClipboard()
 
 const contacts = [
   {
@@ -50,6 +49,12 @@ const contacts = [
     value: '@oritwoen',
     href: 'https://x.com/oritwoen',
     icon: 'i-simple-icons-x',
+  },
+  {
+    label: 'bluesky',
+    value: '@oritwoen.dev',
+    href: 'https://bsky.app/profile/oritwoen.dev',
+    icon: 'i-simple-icons-bluesky',
   },
   {
     label: 'telegram',

@@ -74,6 +74,15 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         target="_blank"
         aria-label="X"
       />
+      <UButton
+        icon="i-simple-icons-bluesky"
+        color="neutral"
+        variant="ghost"
+        class="hidden lg:flex"
+        to="https://bsky.app/profile/oritwoen.dev"
+        target="_blank"
+        aria-label="Bluesky"
+      />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
@@ -154,6 +163,15 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
           variant="soft"
           block
           to="https://x.com/oritwoen"
+          target="_blank"
+        />
+        <UButton
+          icon="i-simple-icons-bluesky"
+          label="Bluesky"
+          color="neutral"
+          variant="soft"
+          block
+          to="https://bsky.app/profile/oritwoen.dev"
           target="_blank"
         />
       </div>

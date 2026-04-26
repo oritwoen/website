@@ -2,6 +2,7 @@
 const links = [
   { label: 'github', to: 'https://github.com/oritwoen', icon: 'i-simple-icons-github' },
   { label: 'x', to: 'https://x.com/oritwoen', icon: 'i-simple-icons-x' },
+  { label: 'bluesky', to: 'https://bsky.app/profile/oritwoen.dev', icon: 'i-simple-icons-bluesky' },
 ]
 
 function textToHex(s: string) {
