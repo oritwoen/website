@@ -83,11 +83,6 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    defaults: {
-      extension: 'png',
-      width: 1200,
-      height: 630,
-      cacheMaxAgeSeconds: 60 * 60 * 24 * 30,
-    },
+    zeroRuntime: true,
   },
 })
