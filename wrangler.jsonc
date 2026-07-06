@@ -25,4 +25,7 @@
       "database_name": "website",
     }
   ],
+  "cache": {
+    "enabled": true
+  }
 }
