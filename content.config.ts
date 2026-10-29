@@ -1,4 +1,5 @@
 import { defineCollection, z } from '@nuxt/content'
+import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
 const createEnum = (options: [string, ...string[]]) => z.enum(options)
 
@@ -86,6 +87,7 @@ export const collections = {
       ),
       date: z.date(),
       badge: z.object({ label: z.string().nonempty() }),
+      sitemap: defineSitemapSchema({ z }),
     }),
   }),
 }
